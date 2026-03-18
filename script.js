@@ -1,15 +1,13 @@
-const API_URL = 'http://localhost:3001/students';
+const API_URL = 'http://localhost:3002/students';
 
 document.addEventListener('DOMContentLoaded', () => {
     const getStudentsBtn = document.getElementById('get-students-btn');
     const addStudentForm = document.getElementById('add-student-form');
     const tbody = document.querySelector('#students-table tbody');
 
- 
     getStudentsBtn.addEventListener('click', getStudents);
     addStudentForm.addEventListener('submit', addStudent);
     
-   
     tbody.addEventListener('click', (e) => {
         const id = e.target.dataset.id;
         if (!id) return;
@@ -31,7 +29,7 @@ async function getStudents() {
         renderStudents(students);
     } catch (error) {
         console.error(error);
-        alert('Сервер недоступний. Запустіть: npx json-server --watch students.json --port 3001');
+        alert('Сервер недоступний. Запустіть: npx json-server --watch students.json --port 3002');
     }
 }
 
@@ -94,7 +92,6 @@ async function updateStudent(id) {
     if (!newName) return;
 
     try {
-        
         const response = await fetch(`${API_URL}/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -112,7 +109,6 @@ async function deleteStudent(id) {
     if (!confirm('Видалити цього студента?')) return;
 
     try {
-     
         const response = await fetch(`${API_URL}/${id}`, {
             method: 'DELETE'
         });
