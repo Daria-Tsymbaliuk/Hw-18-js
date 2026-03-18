@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Students - Управління студентами</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Список студентів</h1>
+    
+    <!-- btn для завантаження списку -->
+    <div style="text-align: center; margin-bottom: 20px;">
+      <button id="get-students-btn">Отримати студентів</button>
+    </div>
+
+    <!-- Таблиця для відображення даних -->
+    <table id="students-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ім'я</th>
+          <th>Вік</th>
+          <th>Курс</th>
+          <th>Навички</th>
+          <th>Email</th>
+          <th>Статус</th>
+          <th>Дії</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Сюди JS буде вставляти рядки <tr> -->
+      </tbody>
+    </table>
+
+    <hr>
+
+    <!-- Форма для додавання нового студента -->
+    <h2>Додати нового студента</h2>
+    <form id="add-student-form">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" placeholder="Наприклад: Іван Петренко" required>
+
+      <label for="age">Вік:</label>
+      <input type="number" id="age" placeholder="Наприклад: 20" required>
+
+      <label for="course">Курс:</label>
+      <input type="text" id="course" placeholder="Наприклад: Web Development" required>
+
+      <label for="skills">Навички (через кому):</label>
+      <input type="text" id="skills" placeholder="HTML, CSS, JavaScript" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="example@mail.com" required>
+
+      <label style="display: flex; align-items: center; gap: 10px;">
+        <span>Записаний на курс:</span>
+        <input type="checkbox" id="isEnrolled" style="width: auto; margin: 0;">
+      </label>
+
+      <button type="submit" style="width: 100%; margin-top: 10px; background-color: #28a745;">
+        Додати студента
+      </button>
+    </form>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
